@@ -19,21 +19,29 @@ public class PageModelBuilder<T> {
     private int amountOfPages;
     
     public final void buildPagination(List<T> entityList) {
-        this.entityList = entityList;
-        totalEntityAmount = entityList.size();
-        this.entityAmountOnPage = ENTITY_AMOUNT_ON_PAGE_BY_DEFOULT;
-        amountOfPages = countAmountOfPages();
+        if (!(entityList == null || entityList.size() == 0)) {
+            this.entityList = entityList;
+            totalEntityAmount = entityList.size();
+            this.entityAmountOnPage = ENTITY_AMOUNT_ON_PAGE_BY_DEFOULT;
+            amountOfPages = countAmountOfPages();
+        } else {
+            totalEntityAmount = 0;
+            amountOfPages = 0;
+        }
     }
     
     public final PageModel<T> getPageModel(String numberOfPage) {
-        PageModel<T> pageModel = new PageModel<>();
+        PageModel<T> pageModel = null;
         
-        int pageNumber = getPageNumber(numberOfPage);
-        List<T> entityListOnPage = getSubListForPage(pageNumber);
-        
-        pageModel.setEntityListOnPage(entityListOnPage);
-        pageModel.setCurrentPage(pageNumber);
-        pageModel.setAmountOfPages(amountOfPages);
+        if (amountOfPages > 0) {
+            int pageNumber = getPageNumber(numberOfPage);
+            List<T> entityListOnPage = getSubListForPage(pageNumber);
+    
+            pageModel = new PageModel<>();
+            pageModel.setEntityListOnPage(entityListOnPage);
+            pageModel.setCurrentPage(pageNumber);
+            pageModel.setAmountOfPages(amountOfPages);
+        }
         
         return pageModel;
     }
@@ -60,8 +68,8 @@ public class PageModelBuilder<T> {
         try {
             pageNumber = Integer.valueOf(numberOfPage);
         } catch (NumberFormatException e) {
-            logger.log(Level.ERROR, e);
             pageNumber = 1;
+            logger.log(Level.ERROR, e.getMessage());
         }
         
         if (pageNumber < 1) {
@@ -85,13 +93,4 @@ public class PageModelBuilder<T> {
         List<T> subList = entityList.subList(fromEntity, toEntity);
         return subList;
     }
-    
-    public int getEntityAmountOnPage() {
-        return entityAmountOnPage;
-    }
-    
-    public void setEntityAmountOnPage(int entityAmountOnPage) {
-        this.entityAmountOnPage = entityAmountOnPage;
-    }
-    
 }

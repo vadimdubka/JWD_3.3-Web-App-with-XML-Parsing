@@ -1,9 +1,9 @@
 package com.dubatovka.app.dao.candybuilder;
 
-import com.dubatovka.app.entity.candy.Candy;
-import com.dubatovka.app.entity.candy.CandyConstants;
-import com.dubatovka.app.entity.candy.ImportCandy;
-import com.dubatovka.app.entity.candy.ProducedCandy;
+import com.dubatovka.app.entity.Candy;
+import com.dubatovka.app.entity.CandyConstants;
+import com.dubatovka.app.entity.ImportCandy;
+import com.dubatovka.app.entity.ProducedCandy;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

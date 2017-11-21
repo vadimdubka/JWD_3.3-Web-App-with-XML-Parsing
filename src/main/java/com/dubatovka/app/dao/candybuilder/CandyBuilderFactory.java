@@ -1,11 +1,11 @@
 package com.dubatovka.app.dao.candybuilder;
 
 public class CandyBuilderFactory {
-
+    
     private enum ParserType {
         SAX, DOM, STAX
     }
-
+    
     public static AbstractCandyBuilder createCandyBuilder(String parserType) {
         ParserType type = ParserType.valueOf(parserType.toUpperCase());
         switch (type) {

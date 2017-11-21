@@ -41,6 +41,7 @@ public class ValidatorSAX {
         try {
             Schema schema = factory.newSchema(schemaFile);
             Validator validator = schema.newValidator();
+            //TODO удалить если что
 //            validator.setErrorHandler(new ValidatorSAXHandler());
             Source source = new StreamSource(documentFile);
             validator.validate(source);

@@ -7,7 +7,6 @@ import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
 class ValidatorSAXHandler extends DefaultHandler {
-    //TODO Посмотреть, везде ли нам нужен логер с private static final
     private static final Logger logger = LogManager.getLogger(ValidatorSAXHandler.class);
     
     ValidatorSAXHandler() {

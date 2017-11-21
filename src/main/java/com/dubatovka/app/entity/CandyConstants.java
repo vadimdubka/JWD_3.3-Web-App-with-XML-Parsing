@@ -1,4 +1,4 @@
-package com.dubatovka.app.entity.candy;
+package com.dubatovka.app.entity;
 
 public class CandyConstants {
     public static final String EMPTY_STRING = "";

@@ -3,7 +3,7 @@ package com.dubatovka.app.dao.candybuilder;
 import com.dubatovka.app.dao.DAOFactory;
 import com.dubatovka.app.dao.DocumentDAO;
 import com.dubatovka.app.dao.candybuilder.xmlvalidator.XMLValidationException;
-import com.dubatovka.app.entity.candy.Candy;
+import com.dubatovka.app.entity.Candy;
 
 import java.util.ArrayList;
 import java.util.List;

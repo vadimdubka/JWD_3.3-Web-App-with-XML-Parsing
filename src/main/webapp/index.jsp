@@ -3,33 +3,9 @@
 <html>
 <head><title>Index</title></head>
 <body>
-<section class="left-bar">
-    <c:choose>
-        <c:when test="${sessionScope.user.role != null && 'PLAYER'.equals(sessionScope.user.role.toString())}">
-            <%@include file="user.jsp" %>
-        </c:when>
-        <c:otherwise>
-            <%@include file="login.jsp" %>
-            <a href="register.jsp">Go to Registration!</a><br>
-        </c:otherwise>
-    </c:choose>
-</section>
-
-<h2>Task 3.1 Simple Web App</h2>
-<form action="controller" method="get">
-    Name: <input type="text" name="name" value=""/><br/>
-    Surname: <input type="text" name="surname" value=""/><br/>
-    <input type="hidden" name="command_type" value="show_users_by_criteria">
-    <input type="submit" value="Show users by criteria"/><br/>
-</form>
-
-<form action="controller" method="get">
-    <input type="hidden" name="command_type" value="show_all_users">
-    <input type="submit" value="Show all users">
-</form>
-
 <div align="center">
-    <h2>Task 3.3 XML Parser</h2>
+    <h2>Choose XML-Parser to get Candies from XML File</h2>
+    ${errorMessage}
     <form action="controller" method="get">
         <input type="hidden" name="command_type" value="xml_parse"/>
         <input type="hidden" name="document_path" value="data/candies.xml"/>

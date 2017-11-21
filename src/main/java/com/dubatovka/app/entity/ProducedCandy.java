@@ -1,4 +1,4 @@
-package com.dubatovka.app.entity.candy;
+package com.dubatovka.app.entity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

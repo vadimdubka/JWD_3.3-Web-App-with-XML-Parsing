@@ -1,4 +1,4 @@
-package com.dubatovka.app.entity.candy;
+package com.dubatovka.app.entity;
 
 public class Candy {
 

@@ -1,13 +1,13 @@
 package com.dubatovka.app.dao.candybuilder;
 
 import com.dubatovka.app.dao.exception.DAOException;
-import com.dubatovka.app.entity.candy.Candy;
-import com.dubatovka.app.entity.candy.CandyConstants;
-import com.dubatovka.app.entity.candy.Chocolate;
-import com.dubatovka.app.entity.candy.ImportCandy;
-import com.dubatovka.app.entity.candy.Ingredients;
-import com.dubatovka.app.entity.candy.ProducedCandy;
-import com.dubatovka.app.entity.candy.Value;
+import com.dubatovka.app.entity.Candy;
+import com.dubatovka.app.entity.CandyConstants;
+import com.dubatovka.app.entity.Chocolate;
+import com.dubatovka.app.entity.ImportCandy;
+import com.dubatovka.app.entity.Ingredients;
+import com.dubatovka.app.entity.ProducedCandy;
+import com.dubatovka.app.entity.Value;
 import com.dubatovka.app.dao.candybuilder.xmlvalidator.XMLValidationException;
 import com.dubatovka.app.dao.candybuilder.xmlvalidator.ValidatorSAX;
 import org.apache.logging.log4j.Level;

@@ -1,8 +1,8 @@
-package com.dubatovka.app.controller.command.impl.xmlparse;
+package com.dubatovka.app.controller.command.impl;
 
 import com.dubatovka.app.controller.command.Command;
 import com.dubatovka.app.controller.command.PageNavigator;
-import com.dubatovka.app.entity.candy.Candy;
+import com.dubatovka.app.entity.Candy;
 import com.dubatovka.app.service.ServiceFactory;
 import com.dubatovka.app.service.XMLParseService;
 import com.dubatovka.app.controller.pagination.PageModelBuilder;

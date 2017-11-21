@@ -1,6 +1,6 @@
 package com.dubatovka.app.service;
 
-import com.dubatovka.app.entity.candy.Candy;
+import com.dubatovka.app.entity.Candy;
 
 import java.util.List;
 

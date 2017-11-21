@@ -1,6 +1,6 @@
 package com.dubatovka.app.dao.candybuilder;
 
-import com.dubatovka.app.entity.candy.*;
+import com.dubatovka.app.entity.*;
 import com.dubatovka.app.dao.candybuilder.xmlvalidator.XMLValidationException;
 import org.junit.AfterClass;
 import org.junit.Assert;
