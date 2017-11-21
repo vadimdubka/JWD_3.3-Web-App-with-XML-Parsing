@@ -43,5 +43,4 @@ public class DocumentDAOImpl implements DocumentDAO {
         InputSource inputSource = new InputSource(inputStream);
         return inputSource;
     }
-    
 }
