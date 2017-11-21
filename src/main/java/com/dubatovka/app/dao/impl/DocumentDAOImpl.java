@@ -39,7 +39,6 @@ public class DocumentDAOImpl implements DocumentDAO {
         return file;
     }
     
-    //TODO надо ли закрывать потоки
     public InputSource getInputSource(String path) {
         InputStream inputStream = DocumentDAOImpl.class.getClassLoader().getResourceAsStream(path);
         InputSource inputSource = new InputSource(inputStream);

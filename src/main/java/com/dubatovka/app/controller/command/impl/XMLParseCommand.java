@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-import static com.dubatovka.app.manager.ConfigConstant.*;
+import static com.dubatovka.app.controller.ConfigConstant.*;
 
 public class XMLParseCommand implements Command {
     private static final XMLParseService xmlParseService = ServiceFactory.getInstance().getXmlParseService();

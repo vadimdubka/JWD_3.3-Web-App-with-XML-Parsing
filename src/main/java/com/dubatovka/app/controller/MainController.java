@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.dubatovka.app.manager.ConfigConstant.*;
+import static com.dubatovka.app.controller.ConfigConstant.*;
 
 @WebServlet(name = "MainController", urlPatterns = {"/controller"})
 public class MainController extends HttpServlet {

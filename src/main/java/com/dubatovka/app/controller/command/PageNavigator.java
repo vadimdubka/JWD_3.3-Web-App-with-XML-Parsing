@@ -1,6 +1,6 @@
 package com.dubatovka.app.controller.command;
 
-import static com.dubatovka.app.manager.ConfigConstant.*;
+import static com.dubatovka.app.controller.ConfigConstant.*;
 
 public enum PageNavigator {
     

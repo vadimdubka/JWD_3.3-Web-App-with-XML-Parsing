@@ -3,7 +3,7 @@ package com.dubatovka.app.controller.command;
 import com.dubatovka.app.controller.command.impl.GotoIndexCommand;
 import com.dubatovka.app.controller.command.impl.GotoPaginationCommand;
 import com.dubatovka.app.controller.command.impl.XMLParseCommand;
-import com.dubatovka.app.manager.ConfigConstant;
+import com.dubatovka.app.controller.ConfigConstant;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,7 +31,6 @@ public class CommandFactory {
     private CommandFactory() {
     }
     
-    //TODO Logger c малелькой буквы
     public static Command defineCommand(HttpServletRequest request) {
         String commandTypeName = request.getParameter(ConfigConstant.PARAM_COMMAND_TYPE);
         boolean validCommandTypeName = validateCommandTypeName(commandTypeName);

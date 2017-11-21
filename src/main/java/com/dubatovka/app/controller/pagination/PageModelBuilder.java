@@ -6,8 +6,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-//TODO куда разместить в структере пакет pagination
-//TODO посмотреть как реализовать паттерн builder
 public class PageModelBuilder<T> {
     private final Logger logger = LogManager.getLogger(PageModelBuilder.class);
     

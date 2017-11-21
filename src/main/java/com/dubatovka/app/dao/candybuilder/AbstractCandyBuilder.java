@@ -8,7 +8,6 @@ import com.dubatovka.app.entity.Candy;
 import java.util.ArrayList;
 import java.util.List;
 
-//TODO почитать пр билдер паттерн
 public abstract class AbstractCandyBuilder {
     protected DocumentDAO documentDAO = DAOFactory.getInstance().getDocumentDAO();
     protected List<Candy> candies;
