@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.candy.com/candies"
+         xsi:noNamespaceSchemaLocation="candies.xsd">
+    <produced-candy shelf-life="2017-09-24">
+        <name>Alenka</name>
+        <type>chocolate</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>20.2</water>
+            <sugar>10.8</sugar>
+            <milk>15.0</milk>
+            <fructose>2.5</fructose>
+            <vanillin>3.7</vanillin>
+            <chocolate>
+                <chocolate-type>dark</chocolate-type>
+                <porous>false</porous>
+                <amount>20</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>17.2</proteins>
+            <fats>34.7</fats>
+            <carbohydrates>51.0</carbohydrates>
+        </value>
+        <energy>488</energy>
+    </produced-candy>
+
+    <import-candy delivery="A173621">
+        <name>Snickers</name>
+        <type>mixed</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>0</water>
+            <sugar>1.4</sugar>
+            <milk>22.2</milk>
+            <fructose>0</fructose>
+            <vanillin>0</vanillin>
+            <chocolate>
+                <chocolate-type>dark</chocolate-type>
+                <porous>false</porous>
+                <amount>20</amount>
+            </chocolate>
+            <nuts>24.4</nuts>
+        </ingredients>
+        <value>
+            <proteins>17.7</proteins>
+            <fats>28.8</fats>
+            <carbohydrates>39.9</carbohydrates>
+        </value>
+        <energy>684</energy>
+        <country-code>RUS</country-code>
+    </import-candy>
+
+    <produced-candy shelf-life="2018-01-01" producer="Cabal-fusion co.">
+        <name>Buird Milk</name>
+        <type>chocolate</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>10</water>
+            <sugar>80</sugar>
+            <milk>50</milk>
+            <fructose>7.4</fructose>
+            <vanillin>12.9</vanillin>
+            <chocolate>
+                <chocolate-type>white</chocolate-type>
+                <porous>true</porous>
+                <amount>33</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>20</proteins>
+            <fats>40</fats>
+            <carbohydrates>60</carbohydrates>
+        </value>
+        <energy>328</energy>
+    </produced-candy>
+
+    <produced-candy producer="Modera" shelf-life="2017-07-30">
+        <name>Love Is</name>
+        <type>bubble-gum</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>0</water>
+            <sugar>50</sugar>
+            <milk>0</milk>
+            <fructose>20</fructose>
+            <vanillin>30</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>false</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>7</proteins>
+            <fats>12</fats>
+            <carbohydrates>78.1</carbohydrates>
+        </value>
+        <energy>444</energy>
+    </produced-candy>
+
+    <produced-candy producer="Spartak" shelf-life="2017-09-11">
+        <name>Rocco</name>
+        <type>iris</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>7.2</water>
+            <sugar>24.1</sugar>
+            <milk>11</milk>
+            <fructose>0.9</fructose>
+            <vanillin>0.1</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>false</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>7.1</proteins>
+            <fats>0.4</fats>
+            <carbohydrates>33.2</carbohydrates>
+        </value>
+        <energy>715</energy>
+    </produced-candy>
+
+    <import-candy delivery="B777218">
+        <name>Stimorol</name>
+        <type>bubble-gum</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>7.2</water>
+            <sugar>0</sugar>
+            <milk>0</milk>
+            <fructose>24.1</fructose>
+            <vanillin>22.5</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>false</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>2</proteins>
+            <fats>1</fats>
+            <carbohydrates>17.9</carbohydrates>
+        </value>
+        <energy>204</energy>
+        <country-code>FIN</country-code>
+    </import-candy>
+
+    <produced-candy shelf-life="2017-04-07">
+        <name>Vaverka</name>
+        <type>mixed</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>7.3</water>
+            <sugar>5.5</sugar>
+            <milk>12.2</milk>
+            <fructose>4.4</fructose>
+            <vanillin>3.3</vanillin>
+            <chocolate>
+                <chocolate-type>milk</chocolate-type>
+                <porous>false</porous>
+                <amount>24.5</amount>
+            </chocolate>
+            <nuts>17.1</nuts>
+        </ingredients>
+        <value>
+            <proteins>24.4</proteins>
+            <fats>35.1</fats>
+            <carbohydrates>44.8</carbohydrates>
+        </value>
+        <energy>555</energy>
+    </produced-candy>
+
+    <import-candy delivery="C74638265">
+        <name>Rafaello</name>
+        <type>mixed</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>11</water>
+            <sugar>17.9</sugar>
+            <milk>24.2</milk>
+            <fructose>0.12</fructose>
+            <vanillin>9.2</vanillin>
+            <chocolate>
+                <chocolate-type>white</chocolate-type>
+                <porous>false</porous>
+                <amount>8</amount>
+            </chocolate>
+            <nuts>16.3</nuts>
+        </ingredients>
+        <value>
+            <proteins>7.1</proteins>
+            <fats>22.1</fats>
+            <carbohydrates>44.9</carbohydrates>
+        </value>
+        <energy>488</energy>
+        <country-code>gb</country-code>
+    </import-candy>
+
+    <produced-candy shelf-life="2017-02-15" producer="Krasnij pishchevik">
+        <name>Zel Naga</name>
+        <type>caramel</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>1.1</water>
+            <sugar>2.2</sugar>
+            <milk>3.3</milk>
+            <fructose>4.4</fructose>
+            <vanillin>5.5</vanillin>
+            <chocolate>
+                <chocolate-type>dark</chocolate-type>
+                <porous>false</porous>
+                <amount>7.7</amount>
+            </chocolate>
+            <nuts>8.8</nuts>
+        </ingredients>
+        <value>
+            <proteins>9.9</proteins>
+            <fats>10.1</fats>
+            <carbohydrates>11.2</carbohydrates>
+        </value>
+        <energy>666</energy>
+    </produced-candy>
+
+    <import-candy delivery="M85648364">
+        <name>Mentos</name>
+        <type>bubble-gum</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>6.4</water>
+            <sugar>0.3</sugar>
+            <milk>0</milk>
+            <fructose>4.2</fructose>
+            <vanillin>7.1</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>false</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>1.4</proteins>
+            <fats>2.1</fats>
+            <carbohydrates>77.1</carbohydrates>
+        </value>
+        <energy>322</energy>
+        <country-code>GER</country-code>
+    </import-candy>
+
+    <import-candy delivery="T8755626">
+        <name>Los Santos</name>
+        <type>iris</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>7.1</water>
+            <sugar>15.2</sugar>
+            <milk>0</milk>
+            <fructose>8.1</fructose>
+            <vanillin>5.7</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>false</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>7.7</proteins>
+            <fats>17.7</fats>
+            <carbohydrates>47.7</carbohydrates>
+        </value>
+        <energy>777</energy>
+        <country-code>Fr</country-code>
+    </import-candy>
+
+    <produced-candy shelf-life="2018-12-12">
+        <name>Karto Potat</name>
+        <type>caramel</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>11</water>
+            <sugar>22</sugar>
+            <milk>33</milk>
+            <fructose>4.4</fructose>
+            <vanillin>5.5</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>false</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>12.1</nuts>
+        </ingredients>
+        <value>
+            <proteins>22.9</proteins>
+            <fats>41.2</fats>
+            <carbohydrates>78.4</carbohydrates>
+        </value>
+        <energy>999</energy>
+    </produced-candy>
+
+    <import-candy delivery="J947486296">
+        <name>Nidus Channel</name>
+        <type>mixed</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>0</water>
+            <sugar>11.8</sugar>
+            <milk>8.2</milk>
+            <fructose>55.2</fructose>
+            <vanillin>72.1</vanillin>
+            <chocolate>
+                <chocolate-type>dark</chocolate-type>
+                <porous>true</porous>
+                <amount>81.4</amount>
+            </chocolate>
+            <nuts>28</nuts>
+        </ingredients>
+        <value>
+            <proteins>77</proteins>
+            <fats>88</fats>
+            <carbohydrates>99</carbohydrates>
+        </value>
+        <energy>1000</energy>
+        <country-code>MAR</country-code>
+    </import-candy>
+
+    <produced-candy shelf-life="2010-01-17" producer="Sherol Stowmn">
+        <name>Acapulko</name>
+        <type>chocolate</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>8.2</water>
+            <sugar>15.1</sugar>
+            <milk>24.9</milk>
+            <fructose>72.1</fructose>
+            <vanillin>12.5</vanillin>
+            <chocolate>
+                <chocolate-type>white</chocolate-type>
+                <porous>true</porous>
+                <amount>15.9</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>12.2</proteins>
+            <fats>25.7</fats>
+            <carbohydrates>35.1</carbohydrates>
+        </value>
+        <energy>724</energy>
+    </produced-candy>
+
+    <import-candy delivery="L8478759">
+        <name>Lol Gl Hf</name>
+        <type>mixed</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>0</water>
+            <sugar>0</sugar>
+            <milk>0</milk>
+            <fructose>0</fructose>
+            <vanillin>0</vanillin>
+            <chocolate>
+                <chocolate-type>none</chocolate-type>
+                <porous>0</porous>
+                <amount>0</amount>
+            </chocolate>
+            <nuts>100</nuts>
+        </ingredients>
+        <value>
+            <proteins>4</proteins>
+            <fats>10</fats>
+            <carbohydrates>20</carbohydrates>
+        </value>
+        <energy>300</energy>
+        <country-code>WTF</country-code>
+    </import-candy>
+
+    <produced-candy shelf-life="2020-10-10" producer="Comic Zone">
+        <name>Double Trouble</name>
+        <type>caramel</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>15</water>
+            <sugar>16</sugar>
+            <milk>17</milk>
+            <fructose>18</fructose>
+            <vanillin>19</vanillin>
+            <chocolate>
+                <chocolate-type>milk</chocolate-type>
+                <porous>true</porous>
+                <amount>21</amount>
+            </chocolate>
+            <nuts>22</nuts>
+        </ingredients>
+        <value>
+            <proteins>23</proteins>
+            <fats>24</fats>
+            <carbohydrates>25</carbohydrates>
+        </value>
+        <energy>266</energy>
+    </produced-candy>
+
+</candies>

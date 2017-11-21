@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.candy.com/candies_test"
+        xmlns:tns="http://www.candy.com/candies_test"
+        elementFormDefault="qualified">
+    <element name="candies">
+        <complexType>
+            <sequence>
+                <element ref="tns:candy"
+                         minOccurs="2"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <element name="candy" type="tns:Candy" abstract="true"/>
+    <element name="produced-candy" type="tns:Produced-candy" substitutionGroup="tns:candy"/>
+    <element name="import-candy" type="tns:Import-candy" substitutionGroup="tns:candy"/>
+
+    <complexType name="Candy">
+        <sequence>
+            <element name="name" type="tns:Name"/>
+            <element name="type">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="caramel"/>
+                        <enumeration value="iris"/>
+                        <enumeration value="chocolate"/>
+                        <enumeration value="mixed"/>
+                        <enumeration value="bubble-gum"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="filled" type="boolean"/>
+            <element name="ingredients" type="tns:Ingredients"/>
+            <element name="value" type="tns:Value"/>
+            <element name="energy">
+                <simpleType>
+                    <restriction base="positiveInteger">
+                        <maxInclusive value="1000"/>
+                    </restriction>
+                </simpleType>
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Produced-candy">
+        <complexContent>
+            <extension base="tns:Candy">
+                <attribute name="shelf-life" type="date" use="required"/>
+                <attribute name="producer" type="tns:Name" default="Unknown"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Import-candy">
+        <complexContent>
+            <extension base="tns:Candy">
+                <sequence>
+                    <element name="country-code">
+                        <simpleType>
+                            <restriction base="string">
+                                <pattern value="[A-Za-z]{2,3}"/>
+                            </restriction>
+                        </simpleType>
+                    </element>
+                </sequence>
+                <attribute name="delivery" type="tns:Delivery" use="required"/>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="Ingredients">
+        <sequence>
+            <element name="water" type="tns:Gram"/>
+            <element name="sugar" type="tns:Gram"/>
+            <element name="milk" type="tns:Gram"/>
+            <element name="fructose" type="tns:Milligram"/>
+            <element name="vanillin" type="tns:Milligram"/>
+            <element name="chocolate" type="tns:Chocolate"/>
+            <element name="nuts" type="tns:Gram"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Value">
+        <sequence>
+            <element name="proteins" type="tns:Gram"/>
+            <element name="fats" type="tns:Gram"/>
+            <element name="carbohydrates" type="tns:Gram"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Chocolate">
+        <sequence>
+            <element name="chocolate-type">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="dark"/>
+                        <enumeration value="milk"/>
+                        <enumeration value="white"/>
+                        <enumeration value="none"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="porous" type="boolean"/>
+            <element name="amount" type="tns:Gram"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Name">
+        <restriction base="string">
+            <pattern value="[A-Z][\w .-]+"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Delivery">
+        <restriction base="ID">
+            <pattern value="[A-Z]\d{6,12}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Gram">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="100"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Milligram">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="1000"/>
+        </restriction>
+    </simpleType>
+</schema>

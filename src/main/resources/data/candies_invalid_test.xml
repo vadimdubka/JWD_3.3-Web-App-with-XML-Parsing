@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<candies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.candy.com/candies_test"
+         xsi:noNamespaceSchemaLocation="candies_test.xsd">
+
+    <produced-candy shelf-life="2017-09-24">
+        <name>5lenka</name>
+        <type>chocolate</type>
+        <filled>false</filled>
+        <ingredients>
+            <water>20.2</water>
+            <sugar>10.8</sugar>
+            <milk>15.0</milk>
+            <fructose>2.5</fructose>
+            <vanillin>3.7</vanillin>
+            <chocolate>
+                <chocolate-type>dark</chocolate-type>
+                <porous>false</porous>
+                <amount>20</amount>
+            </chocolate>
+            <nuts>0</nuts>
+        </ingredients>
+        <value>
+            <proteins>17.2</proteins>
+            <fats>34.7</fats>
+            <carbohydrates>51.0</carbohydrates>
+        </value>
+        <energy>488</energy>
+    </produced-candy>
+
+    <import-candy delivery="A173621">
+        <name>Snickers</name>
+        <type>mixed</type>
+        <filled>true</filled>
+        <ingredients>
+            <water>0</water>
+            <sugar>1.4</sugar>
+            <milk>22.2</milk>
+            <fructose>0</fructose>
+            <vanillin>0</vanillin>
+            <chocolate>
+                <chocolate-type>dark</chocolate-type>
+                <porous>false</porous>
+                <amount>20</amount>
+            </chocolate>
+            <nuts>24.4</nuts>
+        </ingredients>
+        <value>
+            <proteins>17.7</proteins>
+            <fats>28.8</fats>
+            <carbohydrates>39.9</carbohydrates>
+        </value>
+        <energy>684</energy>
+        <country-code>RUS</country-code>
+    </import-candy>
+</candies>
