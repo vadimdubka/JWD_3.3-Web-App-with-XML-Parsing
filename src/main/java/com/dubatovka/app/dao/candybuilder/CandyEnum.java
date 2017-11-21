@@ -1,6 +1,8 @@
 package com.dubatovka.app.dao.candybuilder;
 
 public enum CandyEnum {
+    CANDIES("candy"),
+    CANDY("candy"),
     INGREDIENTS("ingredients"),
     CHOCOLATE("chocolate"),
     VALUE("value"),
