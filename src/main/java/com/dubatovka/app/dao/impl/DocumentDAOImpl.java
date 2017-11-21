@@ -20,7 +20,6 @@ public class DocumentDAOImpl implements DocumentDAO {
     public File getFile(String path) throws DAOException {
         URL fileURL = DocumentDAOImpl.class.getClassLoader().getResource(path);
         
-        //TODO одновременно и логер и проброс исключния
         if (fileURL == null) {
             logger.log(Level.ERROR, "File on path" + path + " is not available");
             throw new DAOException("File on path" + path + " is not available");

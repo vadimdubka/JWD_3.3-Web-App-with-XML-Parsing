@@ -26,16 +26,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class CandiesStAXBuilder extends AbstractCandyBuilder {
+class CandiesStAXBuilder extends AbstractCandyBuilder {
     private static final Logger logger = LogManager.getLogger(CandiesStAXBuilder.class);
     private XMLInputFactory inputFactory;
     
-    public CandiesStAXBuilder() {
-        inputFactory = XMLInputFactory.newInstance();
-    }
-    
-    public CandiesStAXBuilder(List<Candy> candies) {
-        super(candies);
+    CandiesStAXBuilder() {
         inputFactory = XMLInputFactory.newInstance();
     }
     
@@ -47,7 +42,6 @@ public class CandiesStAXBuilder extends AbstractCandyBuilder {
         XMLStreamReader reader = null;
         String name;
         
-        //TODO как то оптимизировать
         try {
             File document = documentDAO.getFile(documentPath);
             inputStream = new FileInputStream(document);

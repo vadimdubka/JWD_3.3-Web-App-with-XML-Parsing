@@ -26,18 +26,12 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-//TODO разобрать реализацию парсеровы
-public class CandiesDOMBuilder extends AbstractCandyBuilder {
+class CandiesDOMBuilder extends AbstractCandyBuilder {
     private static final Logger logger = LogManager.getLogger(CandiesDOMBuilder.class);
     
     private DocumentBuilder docBuilder;
     
-    public CandiesDOMBuilder() {
-        createDocBuilder();
-    }
-    
-    public CandiesDOMBuilder(List<Candy> candies) {
-        super(candies);
+    CandiesDOMBuilder() {
         createDocBuilder();
     }
     

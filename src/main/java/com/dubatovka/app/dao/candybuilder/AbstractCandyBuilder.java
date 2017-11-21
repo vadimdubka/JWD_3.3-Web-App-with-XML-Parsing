@@ -9,23 +9,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractCandyBuilder {
-    protected DocumentDAO documentDAO = DAOFactory.getInstance().getDocumentDAO();
-    protected List<Candy> candies;
-
-    public AbstractCandyBuilder() {
+    DocumentDAO documentDAO = DAOFactory.getInstance().getDocumentDAO();
+    List<Candy> candies;
+    
+    AbstractCandyBuilder() {
         candies = new ArrayList<>();
     }
-
-    public AbstractCandyBuilder(List<Candy> candies) {
-        this.candies = candies;
-    }
-
+    
     public List<Candy> getCandies() {
         return candies;
     }
-
+    
     public abstract void buildCandyList(String documentPath, String schemaPath) throws XMLValidationException;
-    
-    
-    
 }
