@@ -3,7 +3,7 @@
          xmlns="http://www.candy.com/candies"
          xsi:noNamespaceSchemaLocation="candies.xsd">
     <produced-candy shelf-life="2017-09-24">
-        <name>Alenka</name>
+        <name>Toptishka</name>
         <type>chocolate</type>
         <filled>false</filled>
         <ingredients>
@@ -54,7 +54,7 @@
     </import-candy>
 
     <produced-candy shelf-life="2018-01-01" producer="Cabal-fusion co.">
-        <name>Buird Milk</name>
+        <name>Bird Milk</name>
         <type>chocolate</type>
         <filled>true</filled>
         <ingredients>
@@ -205,8 +205,8 @@
         <country-code>gb</country-code>
     </import-candy>
 
-    <produced-candy shelf-life="2017-02-15" producer="Krasnij pishchevik">
-        <name>Zel Naga</name>
+    <produced-candy shelf-life="2017-12-15" producer="Krasnij pishchevik">
+        <name>Tick Tack</name>
         <type>caramel</type>
         <filled>false</filled>
         <ingredients>
@@ -257,7 +257,7 @@
     </import-candy>
 
     <import-candy delivery="T8755626">
-        <name>Los Santos</name>
+        <name>Marsianka</name>
         <type>iris</type>
         <filled>false</filled>
         <ingredients>
@@ -283,7 +283,7 @@
     </import-candy>
 
     <produced-candy shelf-life="2018-12-12">
-        <name>Karto Potat</name>
+        <name>Potatoes</name>
         <type>caramel</type>
         <filled>true</filled>
         <ingredients>
@@ -308,7 +308,7 @@
     </produced-candy>
 
     <import-candy delivery="J947486296">
-        <name>Nidus Channel</name>
+        <name>Alaska</name>
         <type>mixed</type>
         <filled>true</filled>
         <ingredients>
@@ -333,7 +333,7 @@
         <country-code>MAR</country-code>
     </import-candy>
 
-    <produced-candy shelf-life="2010-01-17" producer="Sherol Stowmn">
+    <produced-candy shelf-life="2010-01-17" producer="Red October">
         <name>Acapulko</name>
         <type>chocolate</type>
         <filled>true</filled>
@@ -359,7 +359,7 @@
     </produced-candy>
 
     <import-candy delivery="L8478759">
-        <name>Lol Gl Hf</name>
+        <name>Gummer</name>
         <type>mixed</type>
         <filled>false</filled>
         <ingredients>
@@ -384,7 +384,7 @@
         <country-code>WTF</country-code>
     </import-candy>
 
-    <produced-candy shelf-life="2020-10-10" producer="Comic Zone">
+    <produced-candy shelf-life="2020-10-10" producer="Almaty">
         <name>Double Trouble</name>
         <type>caramel</type>
         <filled>false</filled>

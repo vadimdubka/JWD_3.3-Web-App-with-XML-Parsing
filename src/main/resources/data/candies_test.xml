@@ -4,7 +4,7 @@
          xsi:noNamespaceSchemaLocation="candies_test.xsd">
 
     <produced-candy shelf-life="2017-09-24">
-        <name>Alenka</name>
+        <name>Toptishka</name>
         <type>chocolate</type>
         <filled>false</filled>
         <ingredients>

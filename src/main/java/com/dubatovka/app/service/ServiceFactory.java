@@ -2,7 +2,6 @@ package com.dubatovka.app.service;
 
 import com.dubatovka.app.service.impl.XMLParseServiceImpl;
 
-//TODO сделать форматированный вывод
 public final class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
     

@@ -21,7 +21,7 @@ public class CandiesBuilderTest {
     @BeforeClass
     public static void init() throws ParseException {
         producedCandy = new ProducedCandy();
-        producedCandy.setName("Alenka");
+        producedCandy.setName("Toptishka");
         producedCandy.setType("chocolate");
         producedCandy.setFilled(false);
         producedCandy.setEnergy(488);
@@ -105,10 +105,6 @@ public class CandiesBuilderTest {
         AbstractCandyBuilder builder = CandyBuilderFactory.createCandyBuilder("sax");
         builder.buildCandyList(TEST_XML_PATH, TEST_XSD_PATH);
         List<Candy> candySet = builder.getCandies();
-//        for (Candy candy : candySet) {
-//            System.out.println(candy);
-//        }
-//        System.out.println(candySet);
         boolean equals = checkEquals(candySet);
         Assert.assertTrue("Built objects are not equals to expected.", equals);
     }

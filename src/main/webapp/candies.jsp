@@ -16,19 +16,19 @@
             <td>Name</td>
             <td>Type</td>
             <td>Filled</td>
-            <td>water</td>
-            <td>sugar</td>
-            <td>milk</td>
-            <td>fructose</td>
-            <td>vanillin</td>
-            <td>nuts</td>
+            <td>water, g</td>
+            <td>sugar, g</td>
+            <td>milk, g</td>
+            <td>fructose, mg</td>
+            <td>vanillin, mg</td>
+            <td>nuts, g</td>
             <td>chocolateType</td>
             <td>porous</td>
-            <td>amount</td>
-            <td>proteins</td>
-            <td>fats</td>
-            <td>carbohydrates</td>
-            <td>energy</td>
+            <td>amount, g</td>
+            <td>proteins, g</td>
+            <td>fats, g</td>
+            <td>carbohydrates, g</td>
+            <td>energy, cal</td>
         </tr>
         <c:forEach var="candy" items="${candy_page_model.entityListOnPage}">
             <tr>
