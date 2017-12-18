@@ -9,7 +9,7 @@ import java.util.List;
 public class PageModelBuilder<T> {
     private final Logger logger = LogManager.getLogger(PageModelBuilder.class);
     
-    private static final int ENTITY_AMOUNT_ON_PAGE_BY_DEFOULT = 5;
+    private static final int ENTITY_AMOUNT_ON_PAGE_BY_DEFAULT = 5;
     
     private List<T> entityList;
     private int totalEntityAmount;
@@ -20,7 +20,7 @@ public class PageModelBuilder<T> {
         if (!(entityList == null || entityList.size() == 0)) {
             this.entityList = entityList;
             totalEntityAmount = entityList.size();
-            this.entityAmountOnPage = ENTITY_AMOUNT_ON_PAGE_BY_DEFOULT;
+            this.entityAmountOnPage = ENTITY_AMOUNT_ON_PAGE_BY_DEFAULT;
             amountOfPages = countAmountOfPages();
         } else {
             totalEntityAmount = 0;

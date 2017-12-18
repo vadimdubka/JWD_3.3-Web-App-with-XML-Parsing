@@ -4,31 +4,33 @@
 <html>
 <head>
     <title>Candies</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css">
 </head>
 <body>
-<a href="index.jsp">Go back to index page</a>
-
 <jsp:useBean id="candy_page_model" type="com.dubatovka.app.controller.pagination.PageModel" scope="request"/>
+
+<a href="index.jsp">Go back to index page</a>
 <div align="center">
-    <p>Candies:</p>
     <table border="true">
+        <caption>Candies</caption>
         <tr>
-            <td>Name</td>
-            <td>Type</td>
-            <td>Filled</td>
-            <td>water, g</td>
-            <td>sugar, g</td>
-            <td>milk, g</td>
-            <td>fructose, mg</td>
-            <td>vanillin, mg</td>
-            <td>nuts, g</td>
-            <td>chocolateType</td>
-            <td>porous</td>
-            <td>amount, g</td>
-            <td>proteins, g</td>
-            <td>fats, g</td>
-            <td>carbohydrates, g</td>
-            <td>energy, cal</td>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Filled</th>
+            <th>water, g</th>
+            <th>sugar, g</th>
+            <th>milk, g</th>
+            <th>fructose, mg</th>
+            <th>vanillin, mg</th>
+            <th>nuts, g</th>
+            <th>chocolateType</th>
+            <th>porous</th>
+            <th>amount, g</th>
+            <th>proteins, g</th>
+            <th>fats, g</th>
+            <th>carbohydrates, g</th>
+            <th>energy, cal</th>
         </tr>
         <c:forEach var="candy" items="${candy_page_model.entityListOnPage}">
             <tr>

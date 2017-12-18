@@ -24,7 +24,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 class CandiesDOMBuilder extends AbstractCandyBuilder {
     private static final Logger logger = LogManager.getLogger(CandiesDOMBuilder.class);
@@ -47,6 +49,7 @@ class CandiesDOMBuilder extends AbstractCandyBuilder {
     @Override
     public void buildCandyList(String documentPath, String schemaPath) throws XMLValidationException {
         ValidatorSAX.validate(documentPath, schemaPath);
+        
         List<Candy> candyList = new ArrayList<>();
         try {
             Document doc = docBuilder.parse(documentDAO.getInputSource(documentPath));
@@ -69,12 +72,6 @@ class CandiesDOMBuilder extends AbstractCandyBuilder {
         } catch (IOException e) {
             logger.log(Level.ERROR, "IOException in buildCandyList method of DOMBuilder: " + e);
         }
-    }
-    
-    private String getElementTextContent(Element element, String elementName) {
-        NodeList nList = element.getElementsByTagName(elementName);
-        Node node = nList.item(0);
-        return node.getTextContent();
     }
     
     private ProducedCandy buildProducedCandy(Element producedCandyElement) {
@@ -131,4 +128,11 @@ class CandiesDOMBuilder extends AbstractCandyBuilder {
         value.setFats(Double.parseDouble(getElementTextContent(valueElement, CandyEnum.FATS.getValue())));
         value.setCarbohydrates(Double.parseDouble(getElementTextContent(valueElement, CandyEnum.CARBOHYDRATES.getValue())));
     }
+    
+    private String getElementTextContent(Element element, String elementName) {
+        NodeList nList = element.getElementsByTagName(elementName);
+        Node node = nList.item(0);
+        return node.getTextContent();
+    }
+    
 }

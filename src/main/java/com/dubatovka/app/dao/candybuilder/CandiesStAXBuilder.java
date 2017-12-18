@@ -37,6 +37,7 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     @Override
     public void buildCandyList(String documentPath, String schemaPath) throws XMLValidationException {
         ValidatorSAX.validate(documentPath, schemaPath);
+        
         List<Candy> candySet = new ArrayList<>();
         FileInputStream inputStream = null;
         XMLStreamReader reader = null;

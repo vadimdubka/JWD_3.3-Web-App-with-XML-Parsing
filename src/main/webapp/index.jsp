@@ -5,7 +5,7 @@
 <body>
 <div align="center">
     <h2>Choose XML-Parser to get Candies from XML File</h2>
-    ${errorMessage}
+    ${requestScope.errorMessage}
     <form action="controller" method="get">
         <input type="hidden" name="command_type" value="xml_parse"/>
         <input type="hidden" name="document_path" value="data/candies.xml"/>
