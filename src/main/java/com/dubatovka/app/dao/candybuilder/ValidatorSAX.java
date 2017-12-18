@@ -1,4 +1,4 @@
-package com.dubatovka.app.dao.candybuilder.xmlvalidator;
+package com.dubatovka.app.dao.candybuilder;
 
 import com.dubatovka.app.dao.DAOFactory;
 import com.dubatovka.app.dao.DocumentDAO;
@@ -17,38 +17,32 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-public class ValidatorSAX {
+public final class ValidatorSAX {
     private static final Logger logger = LogManager.getLogger(ValidatorSAX.class);
     
     private static DocumentDAO documentDAO = DAOFactory.getInstance().getDocumentDAO();
     private static String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
     private static SchemaFactory factory = SchemaFactory.newInstance(language);
     
-    public static boolean validate(String documentName, String schemaName) throws XMLValidationException {
-        
-        File documentFile;
-        File schemaFile;
-        try {
-            documentFile = documentDAO.getFile(documentName);
-            schemaFile = documentDAO.getFile(schemaName);
-        } catch (DAOException e) {
-            throw new XMLValidationException("Document is not valid because " + e.getMessage());
-        }
+    private ValidatorSAX() {
+    }
     
+    public static boolean isDocumentValid(String documentName, String schemaName) {
+        boolean isValid = false;
+        
         try {
+            File documentFile = documentDAO.getFile(documentName);
+            File schemaFile = documentDAO.getFile(schemaName);
+            
             Schema schema = factory.newSchema(schemaFile);
             Validator validator = schema.newValidator();
             Source source = new StreamSource(documentFile);
             validator.validate(source);
+            isValid = true;
             logger.log(Level.INFO, documentName + " is valid");
-            return true;
-        } catch (SAXException e) {
-            logger.log(Level.ERROR, documentName + " SAX error: " + e.getMessage());
-            throw new XMLValidationException(documentName + " is not valid because " + e.getMessage());
-        } catch (IOException e) {
-            logger.log(Level.ERROR, "I/O error: " + e.getMessage());
+        } catch (DAOException | SAXException | IOException e) {
+            logger.log(Level.ERROR, "Document is not valid because " + e.getMessage());
         }
-        
-        return false;
+        return isValid;
     }
 }

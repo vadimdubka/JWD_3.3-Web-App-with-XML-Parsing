@@ -7,8 +7,6 @@ import com.dubatovka.app.entity.ImportCandy;
 import com.dubatovka.app.entity.Ingredients;
 import com.dubatovka.app.entity.ProducedCandy;
 import com.dubatovka.app.entity.Value;
-import com.dubatovka.app.dao.candybuilder.xmlvalidator.XMLValidationException;
-import com.dubatovka.app.dao.candybuilder.xmlvalidator.ValidatorSAX;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -47,14 +45,12 @@ class CandiesDOMBuilder extends AbstractCandyBuilder {
     }
     
     @Override
-    public void buildCandyList(String documentPath, String schemaPath) throws XMLValidationException {
-        ValidatorSAX.validate(documentPath, schemaPath);
-        
-        List<Candy> candyList = new ArrayList<>();
+    public void build(String documentPath, String schemaPath) {
         try {
             Document doc = docBuilder.parse(documentDAO.getInputSource(documentPath));
             Element root = doc.getDocumentElement();
             NodeList producedCandyList = root.getElementsByTagName(CandyEnum.PRODUCED_CANDY.getValue());
+            List<Candy> candyList = new ArrayList<>();
             for (int i = 0; i < producedCandyList.getLength(); i++) {
                 Element producedCandyElement = (Element) producedCandyList.item(i);
                 ProducedCandy producedCandy = buildProducedCandy(producedCandyElement);
@@ -68,16 +64,16 @@ class CandiesDOMBuilder extends AbstractCandyBuilder {
             }
             candies = candyList;
         } catch (SAXException e) {
-            logger.log(Level.ERROR, "SAXException in buildCandyList method of DOMBuilder: " + e);
+            logger.log(Level.ERROR, "SAXException in build method of DOMBuilder: " + e);
         } catch (IOException e) {
-            logger.log(Level.ERROR, "IOException in buildCandyList method of DOMBuilder: " + e);
+            logger.log(Level.ERROR, "IOException in build method of DOMBuilder: " + e);
         }
     }
     
     private ProducedCandy buildProducedCandy(Element producedCandyElement) {
         ProducedCandy candy = new ProducedCandy();
         String producer = producedCandyElement.getAttribute(CandyEnum.PRODUCER.getValue());
-        if (CandyConstants.EMPTY_STRING.equals(producer) || producer == null) {
+        if (CandyConstants.EMPTY_STRING.equals(producer) || (producer == null)) {
             producer = CandyConstants.DEFAULT_PRODUCER;
         }
         candy.setProducer(producer);

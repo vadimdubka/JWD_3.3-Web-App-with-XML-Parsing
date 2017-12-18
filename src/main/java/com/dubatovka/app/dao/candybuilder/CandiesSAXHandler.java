@@ -13,7 +13,10 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.EnumSet;
+import java.util.List;
 
 public class CandiesSAXHandler extends DefaultHandler {
     private final Logger logger = LogManager.getLogger(CandiesSAXHandler.class);

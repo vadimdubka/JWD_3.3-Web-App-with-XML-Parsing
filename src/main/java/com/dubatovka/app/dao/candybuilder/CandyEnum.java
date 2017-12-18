@@ -36,7 +36,7 @@ public enum CandyEnum {
     }
     
     public static CandyEnum stringToEnum(String string) {
-        return CandyEnum.valueOf(string.toUpperCase().replaceAll("-", "_"));
+        return valueOf(string.toUpperCase().replaceAll("-", "_"));
     }
     
     public String getValue() {

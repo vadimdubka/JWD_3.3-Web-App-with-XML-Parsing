@@ -1,7 +1,5 @@
 package com.dubatovka.app.dao.candybuilder;
 
-import com.dubatovka.app.dao.candybuilder.xmlvalidator.ValidatorSAX;
-import com.dubatovka.app.dao.candybuilder.xmlvalidator.XMLValidationException;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -31,15 +29,14 @@ class CandiesSAXBuilder extends AbstractCandyBuilder {
     }
     
     @Override
-    public void buildCandyList(String documentPath, String schemaPath) throws XMLValidationException {
-        ValidatorSAX.validate(documentPath, schemaPath);
+    public void build(String documentPath, String schemaPath) {
         try {
             reader.parse(documentDAO.getInputSource(documentPath));
             candies = handler.getCandies();
         } catch (SAXException e) {
-            logger.log(Level.ERROR, "SAXException in buildCandyList method of SAXBuilder: " + e);
+            logger.log(Level.ERROR, "SAXException in build method of SAXBuilder: " + e);
         } catch (IOException e) {
-            logger.log(Level.ERROR, "IOException in buildCandyList method of SAXBuilder: " + e);
+            logger.log(Level.ERROR, "IOException in build method of SAXBuilder: " + e);
         }
     }
 }

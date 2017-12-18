@@ -8,8 +8,6 @@ import com.dubatovka.app.entity.ImportCandy;
 import com.dubatovka.app.entity.Ingredients;
 import com.dubatovka.app.entity.ProducedCandy;
 import com.dubatovka.app.entity.Value;
-import com.dubatovka.app.dao.candybuilder.xmlvalidator.XMLValidationException;
-import com.dubatovka.app.dao.candybuilder.xmlvalidator.ValidatorSAX;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +22,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 class CandiesStAXBuilder extends AbstractCandyBuilder {
     private static final Logger logger = LogManager.getLogger(CandiesStAXBuilder.class);
@@ -35,22 +35,19 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     }
     
     @Override
-    public void buildCandyList(String documentPath, String schemaPath) throws XMLValidationException {
-        ValidatorSAX.validate(documentPath, schemaPath);
-        
-        List<Candy> candySet = new ArrayList<>();
+    public void build(String documentPath, String schemaPath) {
         FileInputStream inputStream = null;
         XMLStreamReader reader = null;
-        String name;
-        
+    
         try {
             File document = documentDAO.getFile(documentPath);
             inputStream = new FileInputStream(document);
             reader = inputFactory.createXMLStreamReader(inputStream);
+            List<Candy> candySet = new ArrayList<>();
             while (reader.hasNext()) {
                 int type = reader.next();
                 if (type == XMLStreamConstants.START_ELEMENT) {
-                    name = reader.getLocalName();
+                    String name = reader.getLocalName();
                     CandyEnum candyEnum = CandyEnum.stringToEnum(name);
                     if (candyEnum == CandyEnum.PRODUCED_CANDY) {
                         Candy candy = buildProducedCandy(reader);
@@ -88,7 +85,7 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     private ProducedCandy buildProducedCandy(XMLStreamReader reader) throws XMLStreamException {
         ProducedCandy candy = new ProducedCandy();
         String producer = reader.getAttributeValue(null, CandyEnum.PRODUCER.getValue());
-        if (producer == null || CandyConstants.EMPTY_STRING.equals(producer)) {
+        if ((producer == null) || CandyConstants.EMPTY_STRING.equals(producer)) {
             producer = CandyConstants.DEFAULT_PRODUCER;
         }
         candy.setProducer(producer);
@@ -112,9 +109,9 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     }
     
     private void buildCandy(XMLStreamReader reader, Candy candy) throws XMLStreamException {
-        String name;
         while (reader.hasNext()) {
             int type = reader.next();
+            String name;
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
@@ -145,7 +142,7 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
                 case XMLStreamConstants.END_ELEMENT:
                     name = reader.getLocalName();
                     CandyEnum candyEnum = CandyEnum.stringToEnum(name);
-                    if (candyEnum == CandyEnum.PRODUCED_CANDY || candyEnum == CandyEnum.IMPORT_CANDY) {
+                    if ((candyEnum == CandyEnum.PRODUCED_CANDY) || (candyEnum == CandyEnum.IMPORT_CANDY)) {
                         return;
                     }
                     break;
@@ -156,10 +153,9 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     
     private Ingredients buildIngredients(XMLStreamReader reader) throws XMLStreamException {
         Ingredients ingredients = new Ingredients();
-        int type;
-        String name;
         while (reader.hasNext()) {
-            type = reader.next();
+            int type = reader.next();
+            String name;
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
@@ -200,10 +196,9 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     
     private Value buildValue(XMLStreamReader reader) throws XMLStreamException {
         Value value = new Value();
-        int type;
-        String name;
         while (reader.hasNext()) {
-            type = reader.next();
+            int type = reader.next();
+            String name;
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
@@ -232,10 +227,9 @@ class CandiesStAXBuilder extends AbstractCandyBuilder {
     
     private Chocolate buildChocolate(XMLStreamReader reader) throws XMLStreamException {
         Chocolate chocolate = new Chocolate();
-        int type;
-        String name;
         while (reader.hasNext()) {
-            type = reader.next();
+            int type = reader.next();
+            String name;
             switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     name = reader.getLocalName();
