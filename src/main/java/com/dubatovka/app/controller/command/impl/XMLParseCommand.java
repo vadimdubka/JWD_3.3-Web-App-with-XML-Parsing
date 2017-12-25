@@ -17,7 +17,7 @@ public class XMLParseCommand implements Command {
     
     @Override
     public PageNavigator execute(HttpServletRequest request) {
-        XMLParseService xmlParseService = ServiceFactory.getXmlParseService();
+        XMLParseService xmlParseService = ServiceFactory.getInstance().getXmlParseService();
         String documentPath = request.getParameter(PARAM_DOCUMENT_PATH);
         String schemaPath = request.getParameter(PARAM_SCHEMA_PATH);
         String parserType = request.getParameter(PARAM_PARSER_TYPE);
