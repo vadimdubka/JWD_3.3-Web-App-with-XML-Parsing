@@ -98,27 +98,24 @@ public class CandiesBuilderTest {
     
     @Test
     public void checkDOMBuilder() {
-        AbstractCandyBuilder builder = CandyBuilderFactory.createCandyBuilder("dom");
-        builder.buildCandyList(TEST_XML_PATH, TEST_XSD_PATH);
-        List<Candy> candySet = builder.getCandies();
+        CandyBuilderDirector candyBuilderDirector = new CandyBuilderDirector("dom");
+        List<Candy> candySet = candyBuilderDirector.constructCandyList(TEST_XML_PATH, TEST_XSD_PATH);
         boolean equals = checkEquals(candySet);
         Assert.assertTrue("Built objects are not equals to expected.", equals);
     }
     
     @Test
     public void checkSAXBuilder() {
-        AbstractCandyBuilder builder = CandyBuilderFactory.createCandyBuilder("sax");
-        builder.buildCandyList(TEST_XML_PATH, TEST_XSD_PATH);
-        List<Candy> candySet = builder.getCandies();
+        CandyBuilderDirector candyBuilderDirector = new CandyBuilderDirector("dom");
+        List<Candy> candySet = candyBuilderDirector.constructCandyList(TEST_XML_PATH, TEST_XSD_PATH);
         boolean equals = checkEquals(candySet);
         Assert.assertTrue("Built objects are not equals to expected.", equals);
     }
     
     @Test
     public void checkStAXBuilder() {
-        AbstractCandyBuilder builder = CandyBuilderFactory.createCandyBuilder("stax");
-        builder.buildCandyList(TEST_XML_PATH, TEST_XSD_PATH);
-        List<Candy> candySet = builder.getCandies();
+        CandyBuilderDirector candyBuilderDirector = new CandyBuilderDirector("dom");
+        List<Candy> candySet = candyBuilderDirector.constructCandyList(TEST_XML_PATH, TEST_XSD_PATH);
         boolean equals = checkEquals(candySet);
         Assert.assertTrue("Built objects are not equals to expected.", equals);
     }

@@ -1,17 +1,27 @@
 package com.dubatovka.app.dao.candybuilder;
 
+import com.dubatovka.app.entity.Candy;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public final class CandyBuilderFactory {
-    private static final Logger logger = LogManager.getLogger(CandyBuilderFactory.class);
+import java.util.List;
+
+public class CandyBuilderDirector {
+    private static final Logger logger = LogManager.getLogger(CandyBuilderDirector.class);
+    private final String parserType;
     
-    private enum ParserType {
-        SAX, DOM, STAX
+    public CandyBuilderDirector(String parserType) {
+        this.parserType = parserType;
     }
     
-    public static AbstractCandyBuilder createCandyBuilder(String parserType) {
+    public List<Candy> constructCandyList(String documentPath, String schemaPath) {
+        AbstractCandyBuilder candyBuilder = createCandyBuilder(parserType);
+        candyBuilder.buildCandyList(documentPath, schemaPath);
+        return candyBuilder.getCandies();
+    }
+    
+    private AbstractCandyBuilder createCandyBuilder(String parserType) {
         ParserType type = ParserType.valueOf(parserType.toUpperCase());
         switch (type) {
             case SAX:
@@ -28,6 +38,8 @@ public final class CandyBuilderFactory {
         }
     }
     
-    private CandyBuilderFactory() {
+    private enum ParserType {
+        SAX, DOM, STAX
     }
+    
 }
