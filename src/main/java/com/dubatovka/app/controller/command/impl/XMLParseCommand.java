@@ -14,10 +14,10 @@ import java.util.List;
 import static com.dubatovka.app.controller.ConfigConstant.*;
 
 public class XMLParseCommand implements Command {
-    private static final XMLParseService xmlParseService = ServiceFactory.getInstance().getXmlParseService();
     
     @Override
     public PageNavigator execute(HttpServletRequest request) {
+        XMLParseService xmlParseService = ServiceFactory.getXmlParseService();
         String documentPath = request.getParameter(PARAM_DOCUMENT_PATH);
         String schemaPath = request.getParameter(PARAM_SCHEMA_PATH);
         String parserType = request.getParameter(PARAM_PARSER_TYPE);

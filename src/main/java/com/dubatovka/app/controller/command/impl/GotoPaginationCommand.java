@@ -15,18 +15,17 @@ import static com.dubatovka.app.controller.ConfigConstant.PARAM_PAGE_NUMBER;
 
 @SuppressWarnings("unchecked")
 public class GotoPaginationCommand implements Command {
-    private PageNavigator pageNavigator;
-    private String pageNumber;
-    private HttpServletRequest request;
     
     @Override
     public PageNavigator execute(HttpServletRequest request) {
-        pageNumber = request.getParameter(PARAM_PAGE_NUMBER);
-        this.request = request;
+        String pageNumber = request.getParameter(PARAM_PAGE_NUMBER);
         HttpSession session = request.getSession();
         Object modelBuilder = session.getAttribute(ATTR_PAGE_MODEL_BUILDER);
+        PageNavigator pageNavigator;
         if (modelBuilder.getClass() == PageModelBuilder.class) {
-            receivePageModel(modelBuilder);
+            PageModelBuilder<Candy> pageModelBuilder = (PageModelBuilder<Candy>) modelBuilder;
+            PageModel<Candy> candyPageModel = pageModelBuilder.getPageModel(pageNumber);
+            pageNavigator = getPageNavigator(request, candyPageModel);
         } else {
             request.setAttribute("errorMessage", "Required page is not available. Incompatible type");
             pageNavigator = PageNavigator.FORWARD_PAGE_INDEX;
@@ -35,9 +34,8 @@ public class GotoPaginationCommand implements Command {
         return pageNavigator;
     }
     
-    private void receivePageModel(Object modelBuilder) {
-        PageModelBuilder<Candy> pageModelBuilder = (PageModelBuilder<Candy>) modelBuilder;
-        PageModel<Candy> candyPageModel = pageModelBuilder.getPageModel(pageNumber);
+    private PageNavigator getPageNavigator(HttpServletRequest request, PageModel<Candy> candyPageModel) {
+        PageNavigator pageNavigator;
         if (candyPageModel != null) {
             request.setAttribute(ATTR_CANDY_PAGE_MODEL, candyPageModel);
             pageNavigator = PageNavigator.FORWARD_PAGE_CANDIES;
@@ -45,5 +43,6 @@ public class GotoPaginationCommand implements Command {
             request.setAttribute("errorMessage", "Required page is not available");
             pageNavigator = PageNavigator.FORWARD_PAGE_INDEX;
         }
+        return pageNavigator;
     }
 }
